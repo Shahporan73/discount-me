@@ -54,7 +54,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      10.w.widthBox,
+                      10.widthBox,
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -110,7 +110,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
               ),
 
 
-              30.h.heightBox,
+              30.heightBox,
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -200,7 +200,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  20.h.heightBox,
+                  20.heightBox,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -218,7 +218,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  20.h.heightBox,
+                  20.heightBox,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -236,7 +236,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  20.h.heightBox,
+                  20.heightBox,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -246,7 +246,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         fontSize: 16.sp,
                       ),
-                      10.h.heightBox,
+                      10.heightBox,
                       Row(
                         children: List.generate(
                           3,
@@ -265,7 +265,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              20.h.heightBox,
+              20.heightBox,
               Center(
                 child: GestureDetector(
                   onTap: () {
@@ -293,7 +293,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                 ),
               ),
 
-              40.h.heightBox,
+              40.heightBox,
               Row(
                 children: [
                   Expanded(
@@ -305,7 +305,7 @@ class RiderHomeOrderRequestDetailsScreen extends StatelessWidget {
                       onTap: () {},
                     ),
                   ),
-                  10.w.widthBox,
+                  10.widthBox,
                   Expanded(
                     child: Roundbutton(
                       borderRadius: 10.r,

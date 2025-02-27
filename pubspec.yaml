@@ -37,7 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   http: ^1.2.2
-  velocity_x: ^4.2.1
   google_fonts: ^6.2.1
   get: ^4.6.5
   readmore: ^3.0.0

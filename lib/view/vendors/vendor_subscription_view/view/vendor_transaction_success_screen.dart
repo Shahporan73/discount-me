@@ -33,7 +33,7 @@ class VendorTransactionSuccessScreen extends StatelessWidget {
                   10.heightBox,
                   HomeResturantAppBar(),
 
-                  40.h.heightBox,
+                  40.heightBox,
                   Stack(
                     children: [
                       // Background Image

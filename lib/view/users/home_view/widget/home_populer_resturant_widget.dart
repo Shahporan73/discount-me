@@ -2,6 +2,7 @@
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart'; // For Urbanist Font
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // For responsive sizing
 
@@ -14,7 +15,7 @@ class HomePopulerResturantWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350.w,
+      width: Get.width / 1.2,
       margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 0),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       decoration: BoxDecoration(
@@ -37,8 +38,8 @@ class HomePopulerResturantWidget extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(5),
             child: Image.asset(
-              AppImages.restuImg, // Replace with your image path
-              scale: 4,
+              AppImages.restuImg,
+              height: Get.height / 8,
               fit: BoxFit.cover,
             ),
           ),
@@ -48,7 +49,7 @@ class HomePopulerResturantWidget extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 // Top Row with Restaurant Name and Rating
                 Row(
@@ -59,7 +60,7 @@ class HomePopulerResturantWidget extends StatelessWidget {
                       child: Text(
                         'Restaurant Name', // Replace with dynamic data
                         style: GoogleFonts.urbanist(
-                          fontSize: 16.sp,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
                           color: Colors.black,
                         ),
@@ -73,24 +74,19 @@ class HomePopulerResturantWidget extends StatelessWidget {
                     // Rating
                     Row(
                       children: [
-                        // Loop to show filled and empty stars based on hardcoded rating
-                        ...List.generate(5, (index) {
-                          if (index < rating.floor()) {
-                            // Full star
-                            return Icon(Icons.star, color: Colors.orange, size: 16);
-                          } else if (index < rating) {
-                            // Half star (use Icons.star_half)
-                            return Icon(Icons.star_half, color: Colors.orange, size: 16);
-                          } else {
-                            // Empty star
-                            return Icon(Icons.star_border, color: Colors.orange, size: 16);
-                          }
-                        }),
+                        RatingBarIndicator(
+                          itemCount: 5,
+                            rating: 4.2,
+                            itemSize: 12,
+                            itemBuilder: (context, index) {
+                              return Icon(Icons.star, size: 12, color: Colors.amber,);
+                            },
+                        ),
                         SizedBox(width: 4),
                         Text(
                           rating.toString(), // Display the hardcoded rating number
                           style: GoogleFonts.urbanist(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: Colors.black,
                           ),
@@ -100,13 +96,12 @@ class HomePopulerResturantWidget extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 6.h),
+
 
                 // Description Text
-                Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...', // Replace with dynamic description
+                Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...', // Replace with dynamic description
                   style: GoogleFonts.urbanist(
-                    fontSize: 14.sp,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.blackColor,
                   ),
@@ -119,8 +114,8 @@ class HomePopulerResturantWidget extends StatelessWidget {
                 // Location
                 Row(
                   children: [
-                    Icon(Icons.location_on, color: Colors.grey, size: 16.sp),
-                    SizedBox(width: 5.w),
+                    Icon(Icons.location_on, color: Colors.grey, size: 16),
+                    SizedBox(width: 2),
                     Text(
                       'Rampura, Banasree, Dhaka', // Replace with dynamic address
                       style: GoogleFonts.urbanist(

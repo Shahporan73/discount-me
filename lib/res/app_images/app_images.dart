@@ -1,6 +1,6 @@
 class AppImages {
 /*========================image list==============================================*/
-  static String deliciousVitaminFood = "assets/images/delicious_food_bg.png";
+  static String deliciousVitaminFood = "assets/images/splash_one-logo.png";
   static String discountMeLogo = "assets/images/discount_me_logo.png";
   static String eatingDonutBro = "assets/images/eating_donuts_bro.png";
   static String riderSplashBg = "assets/images/rider_splash_bg.png";
@@ -12,7 +12,7 @@ class AppImages {
 
   static String authBg = "assets/images/sign_up_bg.png";
   static String signUpPreviewImg = "assets/images/sign_up_preview_img.png";
-  static String loginBg = "assets/images/login_bg.png";
+  static String loginBg = "assets/images/Tablet login-bro (1) 1 (1).png";
   static String forgotBg = "assets/images/forgot_bg.png";
   static String otpBg = "assets/images/otp_bg.png";
   static String createPassBg = "assets/images/create_pass_bg.png";
@@ -71,6 +71,8 @@ class AppImages {
   static String msgSendIcon= "assets/icons/message_send.png";
 
   static String chat= "assets/icons/Chat.png";
+  static String supportChatIcon= "assets/icons/support_chat_icon.png";
+  static String couponManagementIcon= "assets/icons/ticket-2.png";
   static String settingIcon= "assets/icons/setting_icon.png";
   static String shoppingCardIcon= "assets/icons/user_order.png";
 

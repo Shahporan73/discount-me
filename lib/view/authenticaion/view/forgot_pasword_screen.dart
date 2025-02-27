@@ -2,6 +2,7 @@
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/res/common_widget/custom_app_bar.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 import 'package:discount_me_app/view/authenticaion/view/otp_verify_screen.dart';
 
 class ForgotPaswordScreen extends StatelessWidget {
@@ -32,14 +33,16 @@ class ForgotPaswordScreen extends StatelessWidget {
                   child: Center(
                     child: SingleChildScrollView(
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: EdgeInsets.all(0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Image.asset(
-                              AppImages.forgotBg,
-                              scale: 4,
+                            Center(
+                              child: Image.asset(
+                                AppImages.forgotBg,
+                                scale: 4,
+                              ),
                             ),
                             20.heightBox,
                             CustomText(
@@ -122,32 +125,11 @@ class ForgotPaswordScreen extends StatelessWidget {
 
                             20.heightBox,
 
-                            GestureDetector(
+                            Roundbutton(
+                              title: 'Verify',
                               onTap: () {
-                                Get.to(OtpVerifyScreen());
-                              },
-                              child: Container(
-                                alignment: Alignment.center,
-                                width: width,
-                                padding: EdgeInsets.symmetric(vertical: 15.h),
-                                decoration: BoxDecoration(
-                                    color: AppColors.secondaryColor,
-                                    borderRadius: BorderRadius.circular(8.r)),
-                                child: CustomText(
-                                  title: "Verify",
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16.sp,
-                                  color: AppColors.whiteColor,
-                                ),
-                              ),
-                            ),
-
-
-
-
-
-
-
+                              Get.to(()=>OtpVerifyScreen());
+                            },)
 
 
 

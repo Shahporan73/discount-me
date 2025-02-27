@@ -2,6 +2,7 @@
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/res/common_widget/picker_dialog.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 
 class UploadDocumentWidget extends StatelessWidget {
   const UploadDocumentWidget({super.key});

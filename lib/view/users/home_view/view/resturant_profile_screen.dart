@@ -203,32 +203,25 @@ class ResturantProfileScreen extends StatelessWidget {
             ),
           ),
         ),
-        floatingActionButton: Container(
-          width: 60, // Customize the size as needed
-          height: 60, // Customize the size as needed
-          decoration: BoxDecoration(
-            color: AppColors.primaryColor,
-            borderRadius: BorderRadius.circular(50), // BorderRadius.circular(50)
-          ),
-          child: FloatingActionButton(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            onPressed: () {
-              Get.to(UserChatVendorListScreen());
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(Icons.message_outlined, size: 24.sp, color: Colors.white,),
-                CustomText(
-                  title: "support",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 10.sp,
-                  color: Colors.white,
-                ),
-              ],
-            ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColors.primaryColor,
+          elevation: 0,
+          onPressed: () {
+            Get.to(UserChatVendorListScreen());
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(AppImages.supportChatIcon, scale: 4,),
+              SizedBox(height: 5.h,),
+              CustomText(
+                title: "support",
+                fontWeight: FontWeight.w600,
+                fontSize: 10.sp,
+                color: Colors.white,
+              ),
+            ],
           ),
         ),
       ),

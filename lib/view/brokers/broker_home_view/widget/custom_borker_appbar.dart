@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 import 'package:flutter/material.dart';
 
 class CustomBrokerAppBar extends StatelessWidget {
@@ -27,7 +28,7 @@ class CustomBrokerAppBar extends StatelessWidget {
                 ),
               ),
 
-              20.w.widthBox,
+              20.widthBox,
               // Centering the logo using Expanded and Align
               Expanded(
                 child: Align(

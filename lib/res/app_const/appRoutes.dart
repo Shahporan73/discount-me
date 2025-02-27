@@ -11,7 +11,7 @@ class AppRoutes {
 
     // Authentication screens
     GetPage(name: RouteNames.welcomeScreen, page: () => WelcomeScreen()),
-    GetPage(name: RouteNames.signUpScreen, page: () => UserSignUpScreen()),
+    GetPage(name: RouteNames.signUpScreen, page: () => SignUpScreen()),
     GetPage(name: RouteNames.signInScreen, page: () => SignInScreen()),
     GetPage(name: RouteNames.forgotPasswordScreen, page: () => ForgotPaswordScreen()),
     GetPage(name: RouteNames.otpVerifyScreen, page: () => OtpVerifyScreen()),

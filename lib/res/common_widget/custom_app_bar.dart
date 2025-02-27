@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:discount_me_app/res/app_const/import_list.dart';
+
+
+import '../app_const/import_list.dart';
+import 'custom_text.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String appBarName;

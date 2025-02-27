@@ -2,8 +2,11 @@
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/res/common_widget/custom_app_bar.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 import 'package:discount_me_app/view/authenticaion/view/create_new_password_screen.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+
+import '../../../res/common_widget/Custom_opt_widget.dart';
 
 class OtpVerifyScreen extends StatelessWidget {
   const OtpVerifyScreen({super.key});
@@ -39,14 +42,15 @@ class OtpVerifyScreen extends StatelessWidget {
                   child: Center(
                     child: SingleChildScrollView(
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: EdgeInsets.all(0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Image.asset(
-                              AppImages.otpBg,
-                              scale: 4,
+                            Center(
+                              child: Image.asset(
+                                AppImages.otpBg,
+                                scale: 4,
+                              ),
                             ),
                             20.heightBox,
                             CustomText(
@@ -63,7 +67,7 @@ class OtpVerifyScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                _otp_package_widget(context),
+                                CustomOtpWidget(),
                               ],
                             ),
 
@@ -97,11 +101,10 @@ class OtpVerifyScreen extends StatelessWidget {
                             20.heightBox,
 
                             Roundbutton(
-                              borderRadius: 8,
-                              padding_vertical: 15,
-                              buttonColor: AppColors.secondaryColor,width: width,
+                              buttonColor: AppColors.secondaryColor,
+                              width: width,
                               title: "Confirm", onTap: () {
-                                Get.to(CreateNewPasswordScreen());
+                                Get.to(()=>CreateNewPasswordScreen());
                               },
                             )
 

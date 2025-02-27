@@ -2,6 +2,7 @@
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/res/common_widget/custom_app_bar.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 import 'package:discount_me_app/view/authenticaion/view/sign_in_screen.dart';
 import 'package:discount_me_app/view/authenticaion/widget/create_password_widget.dart';
 
@@ -40,15 +41,17 @@ class CreateNewPasswordScreen extends StatelessWidget {
                   child: Center(
                     child: SingleChildScrollView(
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: EdgeInsets.all(0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
 
-                            Image.asset(
-                              AppImages.createPassBg,
-                              scale: 4,
+                            Center(
+                              child: Image.asset(
+                                AppImages.createPassBg,
+                                scale: 4,
+                              ),
                             ),
 
                             20.heightBox,
@@ -56,11 +59,9 @@ class CreateNewPasswordScreen extends StatelessWidget {
 
                             30.heightBox,
                             Roundbutton(
-                              borderRadius: 8,
-                              padding_vertical: 15,
-                              buttonColor: AppColors.secondaryColor,width: width,
+                              buttonColor: AppColors.secondaryColor,
                               title: "Confirm", onTap: () {
-                                Get.to(SignInScreen());
+                                Get.to(()=>SignInScreen());
                                 },
                             ),
 
