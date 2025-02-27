@@ -10,16 +10,17 @@ class SplashViewOne extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Color(0xffE6F7ED),
-          Color(0xff006A2B),
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          stops: [0.5, 1]
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xffE6F7ED),
+              Color(0xff006A2B),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.5, 1],
+          ),
       ),
       child: Column(
         children: [
@@ -81,9 +82,7 @@ class SplashViewOne extends StatelessWidget {
               20.heightBox,
               GestureDetector(
                 onTap: (){
-                  Get.to(()=>
-                          SplashViewTwo(),
-                      duration: Duration(milliseconds: 100)
+                  Get.to(()=> SplashViewTwo(), duration: Duration(milliseconds: 100)
                   );
                 },
                 child: Container(
