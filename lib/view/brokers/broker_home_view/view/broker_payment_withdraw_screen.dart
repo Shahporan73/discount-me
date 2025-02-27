@@ -2,6 +2,7 @@
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/res/common_widget/custom_textfield_with_label.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 import 'package:discount_me_app/view/brokers/broker_home_view/view/broker_withdraw_success_screen.dart';
 import 'package:discount_me_app/view/vendors/vendor_earning_view/view/vendor_withdraw_success_screen.dart';
 

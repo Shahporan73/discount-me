@@ -54,7 +54,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                   RoundTextField(hint: "Search",
                   prefixIcon: Icon(Icons.search_outlined),),
 
-                  20.h.heightBox,
+                  20.heightBox,
                   SliderView(),
 
                   20.heightBox,
@@ -93,7 +93,19 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                     ],
                   ),
                   10.heightBox,
-                  HomePopulerRecipesWidget(),
+                  SizedBox(
+                    height: Get.height / 3.1,
+                    width: width,
+                    child: ListView.builder(
+                      itemCount: 10,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: ScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return HomePopulerRecipesWidget();
+                      },
+                    ),
+                  ),
 
                   // Popular resturant.......
                   20.heightBox,
@@ -129,7 +141,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                   ),
 
                   SizedBox(
-                    height: 150.h,
+                    height: Get.height / 6,
                     width: width,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,

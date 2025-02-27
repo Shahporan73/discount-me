@@ -35,7 +35,7 @@ class WithdrawSuccessScreen extends StatelessWidget {
 
 
 
-                  40.h.heightBox,
+                  40.heightBox,
                   Stack(
                     children: [
                       // Background Image

@@ -4,7 +4,6 @@ export 'dart:async';
 export 'dart:math';
 export 'const.dart';
 export 'package:google_fonts/google_fonts.dart';
-export 'package:velocity_x/velocity_x.dart';
 export 'package:discount_me_app/res/common_widget/snack_message.dart';
 export 'package:discount_me_app/res/common_widget/custom_app_bar_with_body.dart';
 export 'package:discount_me_app/res/app_images/app_images.dart';
@@ -16,12 +15,13 @@ export 'package:image_picker/image_picker.dart';
 export 'package:file_picker/file_picker.dart';
 export 'package:flutter/foundation.dart';
 export 'package:flutter/services.dart';
+export 'package:discount_me_app/res/custom_style/custom_size.dart';
 
 
 /*================screen list========================*/
 export 'package:discount_me_app/view/splash/splash_view_one.dart';
 export 'package:discount_me_app/res/common_widget/RoundButton.dart';
-export 'package:discount_me_app/view/authenticaion/view/user_sign_up_screen.dart';
+export 'package:discount_me_app/view/authenticaion/view/sign_up_screen.dart';
 export 'package:discount_me_app/view/authenticaion/view/sign_in_screen.dart';
 
 export 'package:discount_me_app/view/authenticaion/view/create_new_password_screen.dart';

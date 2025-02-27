@@ -89,15 +89,16 @@ class UserProfileHomeScreen extends StatelessWidget {
                     children: [
                       Obx(() => CustomText(title: nameController.name.value,  fontSize: 18.sp, fontWeight: FontWeight.w700, color: AppColors.blackColor,)),
                       10.widthBox,
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          shape: BoxShape.circle
+                      GestureDetector(
+                        onTap: () => PickerDialog().showNameChangeDialog(context),
+                        child: Container(
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              color: Colors.black,
+                              shape: BoxShape.circle
+                          ),
+                          child: Icon(Icons.edit, color: Colors.white, size: 18.sp,),
                         ),
-                        child: Icon(Icons.edit, color: Colors.white, size: 18.sp,).onTap(() {
-                          PickerDialog().showNameChangeDialog(context);
-                        },),
                       )
                     ],
                   ),
@@ -151,7 +152,17 @@ class UserProfileHomeScreen extends StatelessWidget {
                   ProfileItemWidget(title: "Logout",
                     icon: Image.asset(AppImages.logout, scale: 4,),
                     onTap: () {
-                    CustomAlertDialog().showLogoutDialog(context);
+                      CustomAlertDialog().customAlert(
+                        context: context, title: 'Logout',
+                        message: 'Are you sure you want to logout?',
+                        NegativebuttonText: 'Cancel',
+                        PositivvebuttonText: 'Logout',
+                        onPositiveButtonPressed: () {
+                          Navigator.of(context).pop();
+                          Get.to(()=>SignInScreen());
+                        },
+                        onNegativeButtonPressed: () => Navigator.of(context).pop(),
+                      );
                     },
                     widget: SizedBox(),
                   ),

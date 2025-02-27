@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/res/common_widget/custom_app_bar.dart';
@@ -7,6 +7,7 @@ import 'package:discount_me_app/view/authenticaion/controller/auth_controller.da
 import 'package:discount_me_app/view/authenticaion/controller/password_controller.dart';
 import 'package:discount_me_app/view/authenticaion/view/forgot_pasword_screen.dart';
 import 'package:discount_me_app/view/users/home_view/view/user_home_screen.dart';
+import 'package:flutter/gestures.dart';
 
 class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
@@ -49,6 +50,8 @@ class SignInScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Image.asset(AppImages.loginBg),
+
+
                           CustomTextfieldWithLabel(
                             labelName: "Email address",
                             hint: "Enter email",
@@ -115,26 +118,47 @@ class SignInScreen extends StatelessWidget {
                           SizedBox(height: 20),
 
                           // Wrap only the part that depends on the observable value with Obx
-                        GestureDetector(
+                        Roundbutton(
+                          title: 'Log In',
                             onTap: () {
                               // Handle login action
                               authController.getLogin();
                             },
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: width,
-                              padding: EdgeInsets.symmetric(vertical: 20.h),
-                              decoration: BoxDecoration(
-                                  color: AppColors.secondaryColor,
-                                  borderRadius: BorderRadius.circular(8.r)),
-                              child: CustomText(
-                                title: "Log In",
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16.sp,
-                                color: AppColors.whiteColor,
-                              ),
+                        ),
+
+                          heightBox20,
+
+                          Center(
+                            child: Text.rich(
+                                textAlign: TextAlign.center,
+                                TextSpan(
+                                    children: [
+                                      TextSpan(
+                                          text: 'Don\'t have an account? ',
+                                          style: GoogleFonts.urbanist(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                              color: Colors.white
+                                          )
+                                      ),
+                                      TextSpan(
+                                          text: 'Sign up',
+                                          style: GoogleFonts.urbanist(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 14,
+                                              color: AppColors.secondaryColor
+                                          ),
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () {
+                                            Get.to(()=>SignUpScreen());
+                                          },
+                                      )
+                                    ]
+                                )
                             ),
                           ),
+
+                          heightBox20
                         ],
                       ),
                     ),

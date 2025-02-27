@@ -45,7 +45,12 @@ class SplashViewTwo extends StatelessWidget {
                 borderRadius: 4.r,
                 title: "Lets go",
                 onTap: () {
-                  Get.to(WelcomeScreen());
+                  Get.to(
+                      ()=>
+                      WelcomeScreen(),
+                      transition: Transition.rightToLeft,
+                      duration: Duration(milliseconds: 500)
+                  );
               },)
             ),
           )

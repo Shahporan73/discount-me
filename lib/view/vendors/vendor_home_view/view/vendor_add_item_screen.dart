@@ -109,7 +109,21 @@ class VendorAddItemScreen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                   12.heightBox,
-                  RoundTextField(hint: "Price"),
+                  RoundTextField(hint: "\$50"),
+                ],
+              ),
+
+              20.heightBox,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomText(title: "Item discount",
+                    color: AppColors.blackColor,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  12.heightBox,
+                  RoundTextField(hint: "\$20"),
                 ],
               ),
 

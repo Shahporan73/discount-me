@@ -263,7 +263,15 @@ class _RiderHomeScreenState extends State<RiderHomeScreen> {
                     titleColor: Colors.red,
                     border: Border.all(width: 1, color: Colors.red),
                     onTap: () {
-                      CustomAlertDialog().showRejectDialog(context);
+                      CustomAlertDialog().customAlert(
+                          context: context,
+                          title: 'Alert',
+                          message: 'Are you sure you want to reject this request?',
+                          NegativebuttonText: 'Cancel',
+                          PositivvebuttonText: 'Confirm',
+                          onPositiveButtonPressed: () => Navigator.of(context).pop(),
+                          onNegativeButtonPressed: () => Navigator.of(context).pop(),
+                      );
                       },
                   ),
               ),

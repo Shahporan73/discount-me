@@ -2,6 +2,7 @@
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/res/common_widget/picker_dialog.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 
 class CustomDottedWidget extends StatelessWidget {
   final VoidCallback? onTap;
@@ -53,7 +54,7 @@ class CustomDottedWidget extends StatelessWidget {
                   size: 32,
                   color: buttonColor,
                 ),
-                5.heightBox,
+                10.heightBox,
                 CustomText(
                   title: "Upload",
                   fontSize: 16.sp,

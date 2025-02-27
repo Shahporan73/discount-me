@@ -88,18 +88,19 @@ class RiderProfileHome extends StatelessWidget {
                         color: AppColors.blackColor,
                       )),
                   10.widthBox,
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Colors.black, shape: BoxShape.circle),
-                    child: Icon(
-                      Icons.edit,
-                      color: Colors.white,
-                      size: 18.sp,
-                    ).onTap(
-                      () {
-                        PickerDialog().showNameChangeDialog(context);
-                      },
+                  GestureDetector(
+                    onTap: () {
+                      PickerDialog().showNameChangeDialog(context);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: Colors.black, shape: BoxShape.circle),
+                      child: Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                        size: 18.sp,
+                      )
                     ),
                   )
                 ],
@@ -144,7 +145,7 @@ class RiderProfileHome extends StatelessWidget {
               ProfileItemWidget(
                 title: "Settings",
                 icon: Image.asset(
-                  AppImages.userNotification,
+                  AppImages.settingIcon,
                   scale: 4,
                 ),
                 navigateIcon: Icon(
@@ -164,7 +165,17 @@ class RiderProfileHome extends StatelessWidget {
                   scale: 4,
                 ),
                 onTap: () {
-                  CustomAlertDialog().showLogoutDialog(context);
+                  CustomAlertDialog().customAlert(
+                    context: context, title: 'Logout',
+                    message: 'Are you sure you want to logout?',
+                    NegativebuttonText: 'Cancel',
+                    PositivvebuttonText: 'Logout',
+                    onPositiveButtonPressed: () {
+                      Navigator.of(context).pop();
+                      Get.to(()=>SignInScreen());
+                    },
+                    onNegativeButtonPressed: () => Navigator.of(context).pop(),
+                  );
                 },
               ),
             ],

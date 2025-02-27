@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_string_interpolations
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
+import 'package:discount_me_app/view/vendors/vendor_coupon_management/view/vendor_created_coupon_screen.dart';
 import 'package:discount_me_app/view/vendors/vendor_suppor_chat_view/view/vendor_chat_user_list_screen.dart';
 
 class VendorProfileHomeScreen extends StatefulWidget {
@@ -99,18 +100,17 @@ class _VendorProfileHomeScreenState extends State<VendorProfileHomeScreen> {
                     color: AppColors.blackColor,
                   ),
                   10.widthBox,
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Colors.black, shape: BoxShape.circle),
-                    child: Icon(
-                      Icons.edit,
-                      color: Colors.white,
-                      size: 18.sp,
-                    ).onTap(
-                      () {
-                        showNameChangeDialog(context);
-                      },
+                  GestureDetector(
+                    onTap: () => showNameChangeDialog(context),
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: Colors.black, shape: BoxShape.circle),
+                      child: Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                        size: 18.sp,
+                      )
                     ),
                   )
                 ],
@@ -125,7 +125,7 @@ class _VendorProfileHomeScreenState extends State<VendorProfileHomeScreen> {
                 ),
                 navigateIcon: Icon(Icons.navigate_next),
                 onTap: () {
-                  Get.to(VendorProfileEditScreen());
+                  Get.to(()=>VendorProfileEditScreen());
                 },
               ),
               Divider(),
@@ -144,11 +144,24 @@ class _VendorProfileHomeScreenState extends State<VendorProfileHomeScreen> {
               Divider(),
               5.heightBox,
               CustomProfileItemWidget(
+                title: "Coupon Management ",
+                icon: Image.asset(
+                  AppImages.couponManagementIcon,
+                  scale: 4,
+                ),
+                navigateIcon: Icon(Icons.navigate_next),
+                onTap: () {
+                  Get.to(()=>VendorCreatedCouponScreen());
+                },
+              ),
+              Divider(),
+              5.heightBox,
+              CustomProfileItemWidget(
                 title: "Support Chat",
                 icon: Image.asset(AppImages.chat, scale: 4,),
                 navigateIcon: Icon(Icons.navigate_next),
                 onTap: () {
-                  Get.to(VendorChatUserListScreen());
+                  Get.to(()=>VendorChatUserListScreen());
                 },
               ),
 
@@ -159,7 +172,7 @@ class _VendorProfileHomeScreenState extends State<VendorProfileHomeScreen> {
                 icon: Image.asset(AppImages.settingIcon, scale: 4,),
                 navigateIcon: Icon(Icons.navigate_next),
                 onTap: () {
-                  Get.to(VendorSettingScreen());
+                  Get.to(()=>VendorSettingScreen());
                 },
               ),
               Divider(),
@@ -171,7 +184,17 @@ class _VendorProfileHomeScreenState extends State<VendorProfileHomeScreen> {
                   scale: 4,
                 ),
                 onTap: () {
-                  CustomAlertDialog().showLogoutDialog(context);
+                  CustomAlertDialog().customAlert(
+                    context: context, title: 'Logout',
+                    message: 'Are you sure you want to logout?',
+                    NegativebuttonText: 'Cancel',
+                    PositivvebuttonText: 'Logout',
+                    onPositiveButtonPressed: () {
+                      Navigator.of(context).pop();
+                      Get.to(()=>SignInScreen());
+                    },
+                    onNegativeButtonPressed: () => Navigator.of(context).pop(),
+                  );
                 },
               )
             ],

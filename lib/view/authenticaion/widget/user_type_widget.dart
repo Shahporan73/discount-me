@@ -1,7 +1,5 @@
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/view/authenticaion/controller/radio_button_controller.dart';
-import 'package:discount_me_app/view/authenticaion/view/rider_sign_up_screen.dart';
-import 'package:discount_me_app/view/authenticaion/view/vendor_sign_up_screen.dart';
 
 class UserTypeWidget extends StatelessWidget {
   UserTypeWidget({super.key});
@@ -14,9 +12,9 @@ class UserTypeWidget extends StatelessWidget {
       height: 60,
       width: width,
       alignment: Alignment.center,
-      color: Colors.transparent, // Keep the container's color transparent
+      color: Colors.transparent,
       child: Material(
-        color: Colors.transparent, // Set Material's color to transparent
+        color: Colors.transparent,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -30,23 +28,28 @@ class UserTypeWidget extends StatelessWidget {
                     groupValue: radioController.selectedRole.value,
                     onChanged: (value) {
                       radioController.changeRole(value!);
-                      Get.to(UserSignUpScreen());
                     },
-                    activeColor: const Color(0xffff7d29),
+                    fillColor: MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                        return radioController.selectedRole.value == "User"
+                            ? Color(0xffff7d29)  // Active color
+                            : Colors.white;      // Inactive color
+                      },
+                    ),
                   ),
                   CustomText(
                     title: "User",
                     fontSize: 16.sp,
                     color: radioController.selectedRole.value == "User"
-                        ? const Color(0xffff7d29)
+                        ? Color(0xffff7d29)
                         : Colors.white,
                   ),
                 ],
               )),
 
-              const SizedBox(width: 20), // Spacer between options
+              const SizedBox(width: 20),
 
-              // Driver Radio Button
+              // Rider Radio Button
               Obx(() => Row(
                 children: [
                   Radio<String>(
@@ -54,21 +57,26 @@ class UserTypeWidget extends StatelessWidget {
                     groupValue: radioController.selectedRole.value,
                     onChanged: (value) {
                       radioController.changeRole(value!);
-                      Get.to(RiderSignUpScreen());
                     },
-                    activeColor: const Color(0xffff7d29), // Custom selected color for radio
+                    fillColor: MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                        return radioController.selectedRole.value == "Rider"
+                            ? Color(0xffff7d29)  // Active color
+                            : Colors.white;      // Inactive color
+                      },
+                    ),
                   ),
                   CustomText(
                     title: "Rider",
                     fontSize: 16.sp,
                     color: radioController.selectedRole.value == "Rider"
-                        ? const Color(0xffff7d29) // Change text color when selected
-                        : Colors.white, // Default color when not selected
+                        ? Color(0xffff7d29)
+                        : Colors.white,
                   ),
                 ],
               )),
 
-              const SizedBox(width: 20), // Spacer between options
+              const SizedBox(width: 20),
 
               // Vendor Radio Button
               Obx(() => Row(
@@ -78,16 +86,21 @@ class UserTypeWidget extends StatelessWidget {
                     groupValue: radioController.selectedRole.value,
                     onChanged: (value) {
                       radioController.changeRole(value!);
-                      Get.to(VendorSignUpScreen());
                     },
-                    activeColor: const Color(0xffff7d29), // Custom selected color for radio
+                    fillColor: MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                        return radioController.selectedRole.value == "Vendor"
+                            ? Color(0xffff7d29)  // Active color
+                            : Colors.white;      // Inactive color
+                      },
+                    ),
                   ),
                   CustomText(
                     title: "Vendor",
                     fontSize: 16.sp,
                     color: radioController.selectedRole.value == "Vendor"
-                        ? const Color(0xffff7d29) // Change text color when selected
-                        : Colors.white, // Default color when not selected
+                        ? Color(0xffff7d29)
+                        : Colors.white,
                   ),
                 ],
               )),

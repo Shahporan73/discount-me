@@ -16,9 +16,9 @@ class VendorHomeAppbarWidget extends StatelessWidget {
                 onTap: () {},
                 child: Icon(Icons.menu, color: Colors.black, size: 32.w.h),
               ),
-              20.w.widthBox,
+              20.widthBox,
               const Icon(Icons.location_on, size: 16,),
-              5.w.widthBox,
+              5.widthBox,
               CustomText(
                 title: "Block B Phase 2 Johar Town",
                 color: AppColors.blackColor,

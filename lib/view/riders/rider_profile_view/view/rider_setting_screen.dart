@@ -45,7 +45,7 @@ class RiderSettingScreen extends StatelessWidget {
                   20.heightBox,
                   GestureDetector(
                     onTap: () {
-                      showDeleteAccountAlertDialog(context);
+                      CustomAlertDialog().showDeleteAccountDialog(context);
                     },
                     child: deleteAccountItem(),
                   )
@@ -113,90 +113,4 @@ class RiderSettingScreen extends StatelessWidget {
       ),
     );
   }
-
-  Future<void> showDeleteAccountAlertDialog(context){
-    return showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor: Colors.white,
-          content: Container(
-            height: MediaQuery.of(context).size.height * 0.20,
-            color: Colors.white,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CustomText(
-                  title: 'Are you sure',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
-                ),
-                10.heightBox,
-                Container(
-                  alignment: Alignment.center,
-                  width: Get.width * 0.60.w,
-                  child: Text.rich(
-                      TextSpan(
-                          children: [
-                            TextSpan(
-                                text: "All your changes will be",
-                                style: GoogleFonts.urbanist(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12.sp,
-                                    color: Colors.black
-                                )
-                            ),
-                            TextSpan(
-                                text: " deleted ",
-                                style: GoogleFonts.urbanist(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12.sp,
-                                    color: Color(0xffA020F0)
-                                )
-                            ),
-                            TextSpan(
-                                text: "and you will no longer be able to access them.",
-                                style: GoogleFonts.urbanist(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12.sp,
-                                    color: Colors.black
-                                )
-                            ),
-
-                          ]
-                      )
-                  ),
-                ),
-
-                15.heightBox,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:<Widget> [
-
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop(); // Closes the dialog
-                      },
-                      child: Text('No'),
-                    ).box.color(Colors.white).border().width(Get.width*0.25).height(40).make(),
-
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop(); // Closes the dialog
-                      },
-                      child: Text('Yes', style: TextStyle(color: Colors.white),),
-                    ).box.color(Colors.black).border().width(Get.width*0.25).height(40).make(),
-                  ],
-                )
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-
 }

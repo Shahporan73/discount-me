@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 import 'package:discount_me_app/view/brokers/broker_subscription_view/view/broker_payment_method_screen.dart';
 import 'package:discount_me_app/view/vendors/vendor_subscription_view/view/vendor_payment_method_screen.dart';
 

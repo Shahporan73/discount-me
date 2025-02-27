@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
-import 'package:discount_me_app/view/riders/rider_profile_view/view/rider_transaction_details_screen.dart';
+import 'package:discount_me_app/view/riders/rider_earning_view/view/rider_transaction_details_screen.dart';
 import 'package:discount_me_app/view/vendors/vendor_earning_view/view/vendor_transaction_details_screen.dart';
 
 class ReferralUsersWidgets extends StatelessWidget {

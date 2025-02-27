@@ -23,9 +23,9 @@ class HomeAppbarWidget extends StatelessWidget {
                 child: Image.asset(AppImages.homeProfileAvatar, scale: 4, fit:BoxFit.cover,),
               ),
 
-              20.w.widthBox,
+              20.widthBox,
               const Icon(Icons.location_on, size: 16,),
-              5.w.widthBox,
+              5.widthBox,
               CustomText(
                 title: "Block B Phase 2 Johar Town",
                 color: AppColors.blackColor,

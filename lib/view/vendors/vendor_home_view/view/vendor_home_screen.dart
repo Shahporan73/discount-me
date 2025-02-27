@@ -8,6 +8,7 @@ import 'package:discount_me_app/view/vendors/vendor_home_view/view/vendor_add_it
 import 'package:discount_me_app/view/vendors/vendor_home_view/view/vendor_order_manage_screen.dart';
 import 'package:discount_me_app/view/vendors/vendor_home_view/widget/vendor_home_appbar.dart';
 import 'package:discount_me_app/view/vendors/vendor_subscription_view/view/vendor_subscription_home_screen.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class VendorHomeScreen extends StatelessWidget {
   VendorHomeScreen({super.key});
@@ -62,20 +63,14 @@ class VendorHomeScreen extends StatelessWidget {
                         // Rating
                         Row(
                           children: [
-                            // Loop to show filled and empty stars based on hardcoded rating
-                            ...List.generate(5, (index) {
-                              if (index < rating.floor()) {
-                                // Full star
-                                return Icon(Icons.star, color: Colors.orange, size: 16.sp);
-                              } else if (index < rating) {
-                                // Half star (use Icons.star_half)
-                                return Icon(Icons.star_half, color: Colors.orange, size: 16.sp);
-                              } else {
-                                // Empty star
-                                return Icon(Icons.star_border, color: Colors.orange, size: 16.sp);
-                              }
-                            },
-                            ),
+                           RatingBarIndicator(
+                             itemSize: 14,
+                               itemCount: 5,
+                               rating: 4.2,
+                               itemBuilder: (context, index) {
+                                 return Icon(Icons.star, color: Colors.amber,);
+                               },
+                           ),
                             const SizedBox(width: 4),
                             Text(
                               rating.toString(), // Display the hardcoded rating number
@@ -114,28 +109,28 @@ class VendorHomeScreen extends StatelessWidget {
                       img: AppImages.itemAddBg,
                       title: "Items Add",
                       onTap: () {
-                        Get.to(VendorAddItemScreen());
+                        Get.to(()=>VendorAddItemScreen());
                       },),
 
                     _itemWidget(
                       img: AppImages.orderManageBg,
                       title: "Order Manage",
                       onTap: () {
-                        Get.to(VendorOrderManageScreen());
+                        Get.to(()=>VendorOrderManageScreen());
                       },),
 
                     _itemWidget(
                       img: AppImages.subscriptionBg,
                       title: "Subscription",
                       onTap: () {
-                        Get.to(VendorSubscriptionHomeScreen());
+                        Get.to(()=>VendorSubscriptionHomeScreen());
                       },),
 
                     _itemWidget(
                       img: AppImages.paymentRevBg,
                       title: "Payment & Revenue",
                       onTap: () {
-                        Get.to(VendorEaringHomeScreen());
+                        Get.to(()=>VendorEaringHomeScreen());
                       },),
 
 
@@ -175,9 +170,12 @@ class VendorHomeScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Roundbutton(title: title,
+            Roundbutton(
+              title: title,
               buttonColor: AppColors.secondaryColor,
               borderRadius: 5.r,
+              fontSize: 12,
+              titleColor: Colors.white,
               onTap: onTap,
             )
           ],

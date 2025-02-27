@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:discount_me_app/res/app_const/import_list.dart';
 import 'package:discount_me_app/view/authenticaion/view/broker_sign_up_screen.dart';
 
@@ -86,13 +88,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                     buttonColor: AppColors.primaryColor,
                     title: "Login",
                     onTap: () {
-                      Get.to(() => SignInScreen());
+                      Get.to(
+                              () => SignInScreen(),
+                          transition: Transition.rightToLeft,
+                          duration: Duration(milliseconds: 500)
+                      );
                     },
                   ),
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: () {
-                      Get.to(() => UserSignUpScreen());
+                      Get.to(
+                              () => SignUpScreen(),
+                          transition: Transition.rightToLeft,
+                          duration: Duration(milliseconds: 500)
+                      );
                     },
                     child: Container(
                         alignment: Alignment.center,

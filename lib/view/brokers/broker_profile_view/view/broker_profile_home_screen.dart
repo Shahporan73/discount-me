@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:discount_me_app/res/app_const/import_list.dart';
+import 'package:discount_me_app/res/custom_style/custom_size.dart';
 import 'package:discount_me_app/view/brokers/broker_profile_view/view/broker_edit_profile_screen.dart';
 
 class BrokerProfileHomeScreen extends StatefulWidget {
@@ -100,18 +101,17 @@ class _BrokerProfileHomeScreenState extends State<BrokerProfileHomeScreen> {
                     color: AppColors.blackColor,
                   ),
                   10.widthBox,
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Colors.black, shape: BoxShape.circle),
-                    child: Icon(
-                      Icons.edit,
-                      color: Colors.white,
-                      size: 18.sp,
-                    ).onTap(
-                          () {
-                        showNameChangeDialog(context);
-                      },
+                  GestureDetector(
+                    onTap: () =>  showNameChangeDialog(context),
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: Colors.black, shape: BoxShape.circle),
+                      child: Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                        size: 18.sp,
+                      )
                     ),
                   )
                 ],
@@ -136,7 +136,7 @@ class _BrokerProfileHomeScreenState extends State<BrokerProfileHomeScreen> {
               5.heightBox,
               CustomProfileItemWidget(
                 title: "Settings",
-                icon: Image.asset(AppImages.userNotification, scale: 4,),
+                icon: Image.asset(AppImages.settingIcon, scale: 4,),
                 navigateIcon: Icon(Icons.navigate_next),
                 onTap: () {
                   Get.to(VendorSettingScreen());
@@ -151,7 +151,17 @@ class _BrokerProfileHomeScreenState extends State<BrokerProfileHomeScreen> {
                   scale: 4,
                 ),
                 onTap: () {
-                  CustomAlertDialog().showLogoutDialog(context);
+                  CustomAlertDialog().customAlert(
+                    context: context, title: 'Logout',
+                    message: 'Are you sure you want to logout?',
+                    NegativebuttonText: 'Cancel',
+                    PositivvebuttonText: 'Logout',
+                    onPositiveButtonPressed: () {
+                      Navigator.of(context).pop();
+                      Get.to(()=>SignInScreen());
+                    },
+                    onNegativeButtonPressed: () => Navigator.of(context).pop(),
+                  );
                 },
               )
 
